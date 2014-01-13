@@ -1,0 +1,29 @@
+// Defines library version
+versions = [:]
+versions.hamcrest = "1.3"
+versions.junit = "4.11"
+versions.log4j2 = "2.0-beta9"
+versions.mockito = "1.9.0"
+versions.weld = "2.1.1.Final"
+
+// Defines libraries that can be used
+libraries = [:]
+
+libraries.logging = [:]
+libraries.logging.api = [
+		"org.apache.logging.log4j:log4j-api:${versions.log4j2}",
+		"org.apache.logging.log4j:log4j-1.2-api:${versions.log4j2}"
+]
+
+libraries.logging.impl = [
+		"org.apache.logging.log4j:log4j-core:${versions.log4j2}"
+]
+
+libraries.testing = [:]
+libraries.testing.jUnitAndMockito = [
+		"junit:junit-dep:${versions.junit}",
+		"org.hamcrest:hamcrest-all:${versions.hamcrest}",
+		"org.mockito:mockito-core:${versions.mockito}"
+]
+
+libraries.weld = "org.jboss.weld.se:weld-se:${versions.weld}"
