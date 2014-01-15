@@ -22,6 +22,7 @@ public class BootLoader {
 	 * @param event
 	 */
 	public void bootListener(@Observes ContainerInitialized event, @Parameters List<String> cmdLineArgs) {
+		System.out.println("DSFFFFFSDFSDFSF");
 		if (cmdLineArgs.isEmpty()) {
 			printer.printHello();
 		} else {

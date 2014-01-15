@@ -5,6 +5,7 @@ versions.junit = "4.11"
 versions.log4j2 = "2.0-beta9"
 versions.mockito = "1.9.0"
 versions.weld = "2.1.1.Final"
+versions.cdiunit = "2.2.1"
 
 // Defines libraries that can be used
 libraries = [:]
@@ -27,3 +28,7 @@ libraries.testing.jUnitAndMockito = [
 ]
 
 libraries.weld = "org.jboss.weld.se:weld-se:${versions.weld}"
+
+libraries.cdiunit = dependencies.create("org.jglue.cdi-unit:cdi-unit:${versions.cdiunit}") {
+	exclude group: 'org.jboss.weld.se'
+}

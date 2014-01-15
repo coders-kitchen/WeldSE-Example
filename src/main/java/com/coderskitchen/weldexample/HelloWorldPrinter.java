@@ -1,17 +1,28 @@
 package com.coderskitchen.weldexample;
 
+import javax.inject.Inject;
+
 /**
  * Prints out a warm greeting
  */
 public class HelloWorldPrinter {
+
+	@Inject
+	private UUIDGenerator uuidGenerator;
+
 	/**
-	 * Simply says hello
+	 * Simply says hello to the world
 	 */
 	public void printHello() {
 		printHello("world");
 	}
 
-	public void printHello(String s) {
-		System.out.printf("Hello %s.\nThis is a greeting from a injected bean!%n", s);
+	/**
+	 * Simply says hello to a specific
+	 * @param greetedIndividual
+	 */
+	public void printHello(String greetedIndividual) {
+
+		System.err.println(String.format("Hello %s.\nThis is a greeting from a injected bean! (%s) %n", greetedIndividual, uuidGenerator.generatorUUID()));
 	}
 }

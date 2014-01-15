@@ -13,5 +13,13 @@ dependencies {
 			libraries.weld
 	runtime libraries.logging.impl
 
-	testCompile libraries.testing.jUnitAndMockito
+	testCompile libraries.testing.jUnitAndMockito, libraries.cdiunit
+}
+
+
+test {
+	testLogging {
+		quiet.exceptionFormat "full"
+		quiet.events "failed", "standardError", "standardOut", "started", "passed", "skipped"
+	}
 }
